@@ -17,13 +17,27 @@
 ```python
 # Visitor segmentation based on characteristics
 # read the data
-/*WRITE YOUR CODE HERE
+import pandas as pd
+import matplotlib.pyplot as plt
+visitor_df = pd.read_csv("/content/clustervisitor.csv")
 
 # Perform segmentation based on characteristics (e.g., age groups)
-/*WRITE YOUR CODE HERE
+age_groups = {
+    'Young': visitor_df['Age'] <= 30,
+    'Middle-aged': (visitor_df['Age'] > 30) & (visitor_df['Age'] <= 50),
+    'Elderly': visitor_df['Age'] > 50
+}
+
+for group, condition in age_groups.items():  
+    visitors_in_group = visitor_df[condition] 
+    print(f"Visitors in {group} age group:")
+    print(visitors_in_group)
+
 
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/6f09f778-1dec-4d76-84ff-62e3d99e6a68)
+
 
 ### Visualization:
 ```python
@@ -44,6 +58,9 @@ plt.title('Visitor Distribution Across Age Groups')
 plt.show()
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/ed07c4d2-028d-4572-83cd-21bc5c0db425)
+
 
 
 ### Result:
+Thus the cluster and visitor segmentation for navigation patterns was implemented successfully in python.
